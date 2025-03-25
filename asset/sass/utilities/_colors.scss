@@ -1,0 +1,44 @@
+$colors: 'primary', 'primary-dark', 'secondary', 'secondary-dark', 'secondary-light', 'success', 'warning', 'error', 'bg-body', 'black', 'gray-33', 'gray-40', 'gray-47', 'gray-60', 'gray-67', 'gray-80', 'gray-87', 'gray-93', 'gray-95', 'gray-98', 'white', 'headings', 'main-text', 'secondary-text', 'buttons', 'icons', 'link';
+
+$colors2:
+    primary $color__primary,
+    primary-dark $color__primary-dark,
+    secondary $color__secondary,
+    secondary-dark $color__secondary-dark,
+    secondary-light $color__secondary-light,
+    secondary-contrast $color__secondary-contrast,
+    success $color__success,
+    warning $color__warning,
+    error $color__error,
+    black $color__black,
+    gray-33 $color__gray-33,
+    gray-40 $color__gray-40,
+    gray-47 $color__gray-47,
+    gray-60 $color__gray-60,
+    gray-67 $color__gray-67,
+    gray-80 $color__gray-80,
+    gray-87 $color__gray-87,
+    gray-93 $color__gray-93,
+    gray-95 $color__gray-95,
+    gray-98 $color__gray-98,
+    white $color__white,
+    body $color__main-text,
+    body-secondary $color__secondary-text;
+
+@each $name, $color in $colors {
+    .text-#{$name} {
+        color: #{$color};
+    }
+
+    .\!text-#{$name} {
+        color: #{$color} !important;
+    }
+
+    .bg-#{$name} {
+        background-color: #{$color};
+    }
+
+    .\!bg-#{$name} {
+        background-color: #{$color} !important;
+    }
+}

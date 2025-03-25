@@ -24,6 +24,8 @@ $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 
 $this->jsTranslate();
 $this->trigger('view.layout');
 
+$this->htmlElement('body')->appendAttribute('class', 'theme-freedom');
+
 if ($userBar) {
 	$this->htmlElement('body')->appendAttribute('class', 'user-bar');
 }

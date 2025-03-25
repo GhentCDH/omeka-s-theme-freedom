@@ -27,6 +27,21 @@ $this->trigger('view.layout');
 if ($userBar) {
 	$this->htmlElement('body')->appendAttribute('class', 'user-bar');
 }
+
+// remove chosen.css if defined
+foreach ($this->headLink() as $index => $link) {
+	if (strpos($link->href, 'chosen.css') !== false) {
+		unset($this->headLink()[$index]);
+	}
+	if (strpos($link->href, 'chosen.min.css') !== false) {
+		unset($this->headLink()[$index]);
+	}
+}
+foreach ($this->headScript() as $index => $script) {
+	if (strpos($script->attributes['src'] ?? '', 'chosen.jquery') !== false) {
+		unset($this->headScript()[$index]);
+	}
+}
 ?>
 
 <?php echo $this->doctype(); ?>
